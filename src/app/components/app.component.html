@@ -1,0 +1,13 @@
+<p-progressSpinner ariaLabel="loading" *ngIf="isLoading | async">
+</p-progressSpinner>
+<ng-container *ngIf="pokeList$ | async as pokeList">
+  <p-inputNumber [formControl]="limit"> </p-inputNumber>
+  <p *ngIf="!(isLoading | async)">{{ pokeList | json }}</p>
+</ng-container>
+
+<ng-container *ngIf="error$ | async as error">
+  <h1>there was an error</h1>
+  <p>{{ error | json }}</p></ng-container
+>
+
+
